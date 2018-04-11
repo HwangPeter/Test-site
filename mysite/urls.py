@@ -39,6 +39,14 @@ from django.conf.urls.static import static
 
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 
+
+from django.conf.urls import url
+from django.contrib import admin
+from plongstatus import views
+urlpatterns += [
+url(r'^updatestatus', views.updatestatus),
+]
+
 """ alternative way
 urlpatterns = [
     path('admin/', admin.site.urls),
